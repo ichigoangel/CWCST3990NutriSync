@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriSync - Home</title>
+
+  <!-- Linking Stylesheets -->
+  <link rel="stylesheet" href="./trycss/home.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./css/navibar.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="shortcut icon" type="image/png" href="images/nutrisync_logo.png" />
+  <link rel="stylesheet" href="./trycss/mode.css">
+</head>
+
+<body>
+  <div id="progressbar"></div>
+  <div id="scrollPath"></div> 
+
+  <div class="cookie-consent" id="cookieConsent">
+    <div class="cookie-icon-container">
+      <i class="bx bx-cookie"></i> <!-- Cookie Icon -->
+      <span>Cookies Consent</span> <!-- Text beside the icon -->
+    </div>
+    <p>This website uses cookies to ensure you get the best experience on our website. <a href="#"
+        style="color: #f8f393;">Learn more</a></p>
+    <div class="cookie-buttons">
+      <button onclick="acceptCookies()">Accept</button>
+      <button onclick="declineCookies()">Decline</button>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <nav class="newNav">
+      <a href="./index.html" class="nav__logo">NutriSync<span>.</span></a>
+      <ul class="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="./Html files/services.html">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Fuel Your Body, Transform Your Life</h1>
+      <p>NutriSync helps you achieve your health goals with personalized nutrition and wellness plans.</p>
+      <a href="#services" class="btn btn-primary">Get Started</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <div class="section" id="about">
+    <h2>About NutriSync</h2>
+    <p class="text">NutriSync is an innovative health-tech company that provides AI-driven nutrition and fitness solutions. We empower individuals with personalized meal plans, fitness tracking, and expert guidance.</p>
+  </div>
+
+  <!-- Our Mission -->
+  <div class="section" id="mission">
+    <h2>Our Mission</h2>
+    <p class="text">We aim to drive digital transformation by developing user-friendly, scalable, and efficient solutions tailored for businesses and individuals alike.</p>
+  </div>
+
+  <!-- Services Section -->
+  <div class="section" id="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+      <div class="service-box">
+        <i class="fas fa-utensils"></i>
+        <h3>Personalized Meal Plans</h3>
+        <p>AI-generated meal plans tailored to your dietary needs.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-dumbbell"></i>
+        <h3>Fitness Tracking</h3>
+        <p>Monitor your progress with smart tracking tools.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-heartbeat"></i>
+        <h3>Wellness Coaching</h3>
+        <p>Expert health coaching to keep you on track.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials Section -->
+  <div class="section" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-container">
+      <div class="testimonial-box">
+        <p>"NutriSync changed my life! I've never felt healthier and more energetic."</p>
+        <h4>- Sarah M.</h4>
+      </div>
+      <div class="testimonial-box">
+        <p>"The meal plans and coaching have helped me achieve my fitness goals faster than I imagined."</p>
+        <h4>- Jason R.</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact section" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4" required placeholder="Your message"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>NutriSync<span>.</span></h2>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <hr>
+    <p class="copyright">© 2024 NutriSync. All rights reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Scripts -->
+  <script src="./tryjs/script.js"></script>
+  <script src="./javascript/index.js"></script>
+
+</body>
+
+</html>
