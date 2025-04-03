@@ -1,0 +1,77 @@
+/* :root {
+    --background-light: #f8f9fa;
+    --background-dark: #1e1e1e;
+    --primary-color: #ff7f50; /* NutriSync Main Color */
+    /* --secondary-color: #ff5722; */
+    /* --text-color: black; */
+/* }*/ 
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Pinterest Masonry Layout */
+.main-container {
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+    column-count: 3; /* Creates Pinterest-like columns */
+    column-gap: 20px;
+}
+
+/* Cards (Sections) */
+.section {
+    display: inline-block;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between posts */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.section:hover {
+    transform: translateY(-5px);
+    background-color: #fffae6;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--background-light);
+}
+
+/* Dark Mode */
+.dark-class {
+    background-color: var(--background-dark);
+    color: white;
+}
+
+/* Responsive: Change Number of Columns */
+@media screen and (max-width: 1200px) {
+    .main-container {
+        column-count: 2;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        column-count: 1;
+    }
+}
