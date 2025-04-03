@@ -1,0 +1,86 @@
+/* Root Variables */
+:root {
+    --text-color: black;
+    --background-light: #f4f4f4;
+    --background-dark: #1e1e1e;
+    --primary-color: #ff7f50; /* NutriSync Theme Color */
+    --secondary-color: #ff5722; 
+}
+
+/* Dark Mode Styling */
+.dark-class {
+    background-color: var(--background-dark);
+    --text-color: white;
+}
+
+.dark-class p, 
+.dark-class h1, 
+.dark-class h2, 
+.dark-class h3, 
+.dark-class h4, 
+.dark-class h5, 
+.dark-class h6, 
+.dark-class a {
+    color: var(--text-color);
+}
+
+/* General Text Styling */
+p, h1, h2, h3, h4, h5, h6, a {
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+}
+
+/* Dark Mode Toggle Button */
+.toggleButton {
+    width: 5rem;
+    height: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* Hide Checkbox */
+.toggleButton input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Toggle Button Background */
+.roundButton {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+/* Toggle Button Circle */
+.roundButton:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0.25rem;
+    transform: translateY(-50%);
+    background-color: white;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* When Dark Mode is Activated */
+input:checked + .roundButton {
+    background-color: var(--secondary-color);
+}
+
+input:checked + .roundButton:before {
+    transform: translate(3rem, -50%);
+}
+
+/* Rounded Styling */
+.roundButton.circle {
+    border-radius: 2rem;
+}
