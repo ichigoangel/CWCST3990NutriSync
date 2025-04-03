@@ -1,11 +1,15 @@
-/* :root {
+/* Root Variables */
+:root {
     --background-light: #f8f9fa;
     --background-dark: #1e1e1e;
     --primary-color: #ff7f50; /* NutriSync Main Color */
-    /* --secondary-color: #ff5722; */
-    /* --text-color: black; */
-/* }*/ 
-/* General Body Styling */
+    --secondary-color: #ff5722;
+    --text-color: #333;
+    --white: #ffffff;
+    --accent-color: #3f8cd9;
+}
+
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -16,62 +20,205 @@ body {
     overflow-x: hidden;
 }
 
-/* Pinterest Masonry Layout */
-.main-container {
-    max-width: 90%;
-    margin: auto;
-    padding: 20px;
-    column-count: 3; /* Creates Pinterest-like columns */
-    column-gap: 20px;
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 50px 20px;
 }
 
-/* Cards (Sections) */
-.section {
-    display: inline-block;
-    width: 100%;
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.hero .btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
     background-color: white;
-    padding: 20px;
+    color: var(--primary-color);
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Space between posts */
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
-/* Hover Effect */
-.section:hover {
+.hero .btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* About, Mission, and Services Section */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Services Section */
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.service-box {
+    background: white;
+    padding: 25px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-box i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.service-box:hover {
     transform: translateY(-5px);
     background-color: #fffae6;
 }
 
-/* Scrollbar Customization */
-::-webkit-scrollbar {
-    width: 10px;
+/* Testimonials Section */
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: var(--secondary-color);
+.testimonial-box {
+    background: #fff;
+    padding: 20px;
+    max-width: 350px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-style: italic;
+}
+
+.testimonial-box h4 {
+    margin-top: 10px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact form {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+.contact form label {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
     border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
-::-webkit-scrollbar-track {
-    background-color: var(--background-light);
-}
-
-/* Dark Mode */
-.dark-class {
-    background-color: var(--background-dark);
+.contact form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: var(--primary-color);
     color: white;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Responsive: Change Number of Columns */
-@media screen and (max-width: 1200px) {
-    .main-container {
-        column-count: 2;
+.contact form button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
     }
-}
 
-@media screen and (max-width: 800px) {
-    .main-container {
-        column-count: 1;
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .testimonial-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        padding: 50px 20px;
     }
 }
