@@ -1,8 +1,9 @@
-/* BAC Calculator Styles for NutriSync */
+/* Blood Pressure Calculator Styles for NutriSync */
 body {
     background-color: #f8f9fa;
     font-family: 'Poppins', sans-serif;
     color: #333;
+    line-height: 1.6;
 }
 
 .calci_title {
@@ -44,9 +45,7 @@ body {
 
 .gender_box,
 .age,
-.weight,
-.drinks,
-.last-drink {
+.blood-pressure {
     margin-bottom: 25px;
     padding: 15px;
     background-color: rgba(162, 243, 115, 0.1);
@@ -56,9 +55,7 @@ body {
 
 .gender_box label,
 .age label,
-.weight label,
-.drinks label,
-.last-drink label {
+.blood-pressure label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
@@ -67,9 +64,7 @@ body {
 
 .gender_box select,
 .age input,
-.weight input,
-.drinks input,
-.last-drink input {
+.blood-pressure input {
     width: 100%;
     padding: 12px;
     border: 2px solid #e0e0e0;
@@ -80,23 +75,21 @@ body {
 
 .gender_box select:focus,
 .age input:focus,
-.weight input:focus,
-.drinks input:focus,
-.last-drink input:focus {
+.blood-pressure input:focus {
     outline: none;
     border-color: #175c26;
 }
 
-.drinks h3,
-.last-drink h3 {
-    color: #175c26;
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+.blood-pressure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .input-btn {
     text-align: center;
     margin-top: 25px;
+    grid-column: span 2;
 }
 
 #btnCalc,
@@ -142,6 +135,8 @@ body {
     border-left: 4px solid #175c26;
     font-size: 1.1rem;
     line-height: 1.6;
+    min-height: 80px;
+    transition: all 0.3s ease;
 }
 
 /* Responsive Design */
@@ -154,7 +149,12 @@ body {
         padding: 20px;
     }
     
+    .blood-pressure {
+        grid-template-columns: 1fr;
+    }
+    
     .input-btn {
+        grid-column: span 1;
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -174,9 +174,7 @@ body {
     
     .gender_box,
     .age,
-    .weight,
-    .drinks,
-    .last-drink {
+    .blood-pressure {
         padding: 12px;
     }
 }
