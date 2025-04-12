@@ -105,6 +105,71 @@ header:hover {
     font-size: 14px;
 }
 
+/* Add these to your existing CSS */
+
+/* Blog Post Content Styling */
+.blog-post p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Category Colors */
+.blog-post .category-label.nutrition {
+    background-color: #2ecc71; /* Green for nutrition */
+}
+
+.blog-post .category-label.fitness {
+    background-color: #3498db; /* Blue for fitness */
+}
+
+.blog-post .category-label.wellness {
+    background-color: #9b59b6; /* Purple for wellness */
+}
+
+.blog-post .category-label.new {
+    background-color: #e74c3c; /* Red for new posts */
+    animation: pulse 2s infinite;
+}
+
+/* Pulse animation for new posts */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Author styling */
+.blog-post-footer span:first-child {
+    color: #175c26; /* NutriSync green */
+    font-weight: bold;
+}
+
+/* Date styling */
+.blog-post p span {
+    font-weight: bold;
+    color: #175c26;
+}
+
+/* Featured Post */
+.blog-post.featured {
+    border: 3px solid #ff7f50;
+    position: relative;
+}
+
+.blog-post.featured:before {
+    content: "FEATURED";
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: #ff7f50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 /* Read More Button */
 .read-more {
     color: #ff7f50; /* NutriSync Theme */
