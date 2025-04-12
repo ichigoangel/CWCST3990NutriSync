@@ -2,8 +2,8 @@
 :root {
     --background-light: #f8f9fa;
     --background-dark: #1e1e1e;
-    --primary-color: #ff7f50; /* NutriSync Main Color */
-    --secondary-color: #ff5722;
+    --primary-color: #a33db3; /* NutriSync Main Color */
+    --secondary-color: #2ea820;
     --text-color: #333;
     --white: #ffffff;
     --accent-color: #3f8cd9;
@@ -192,6 +192,7 @@ section p {
     display: none;
     font-size: 1.2rem;
     transition: 0.3s;
+    scroll-behavior: smooth;
 }
 
 #scrollToTopBtn:hover {

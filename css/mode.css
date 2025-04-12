@@ -1,11 +1,11 @@
 /* Root Variables */
-:root {
-    --text-color: black;
+/* :root {
+    --text-color: rgb(240, 31, 31);
     --background-light: #f4f4f4;
-    --background-dark: #1e1e1e;
-    --primary-color: #ff7f50; /* NutriSync Theme Color */
-    --secondary-color: #ff5722; 
-}
+    --background-dark: #1e1e1e; */
+    /* --primary-color: #ff7f50; */ /* NutriSync Theme Color */
+    /* --secondary-color: #ff5722; 
+} */
 
 /* Dark Mode Styling */
 .dark-class {
@@ -26,7 +26,7 @@
 
 /* General Text Styling */
 p, h1, h2, h3, h4, h5, h6, a {
-    color: var(--text-color);
+    /* color: var(--text-color); */
     transition: color 0.3s ease-in-out;
 }
 
