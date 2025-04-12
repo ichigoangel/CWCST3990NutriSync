@@ -1,0 +1,369 @@
+/* Combined Styles: Tab and Pricing Card */
+html {
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+    margin: 40px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.wrapper header {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper header label {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    cursor: pointer;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    color: #333;
+    position: relative;
+    z-index: 2;
+}
+
+header label:nth-child(2) {
+    width: 40%;
+}
+
+header .slider {
+    position: absolute;
+    height: 85%;
+    border-radius: inherit;
+    background: linear-gradient(145deg, #a2f373 0%, #175c26 100%);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+#tab-1:checked~header .slider {
+    left: 0;
+    width: 90px;
+    transform: translateX(5%);
+}
+
+#tab-2:checked~header .slider {
+    left: 50%;
+    width: 120px;
+    transform: translateX(-50%);
+}
+
+#tab-3:checked~header .slider {
+    left: 100%;
+    width: 95px;
+    transform: translateX(-105%);
+}
+
+#tab-1:checked~header .tab-1,
+#tab-2:checked~header .tab-2,
+#tab-3:checked~header .tab-3 {
+    color: #fff;
+}
+
+.wrapper input[type="radio"] {
+    display: none;
+}
+
+.card-area {
+    overflow: hidden;
+}
+
+.card-area .cards {
+    display: flex;
+    width: 300%;
+}
+
+.cards .row {
+    width: 33.4%;
+}
+
+.cards .row-1 {
+    transition: all 0.3s ease;
+}
+
+#tab-1:checked~.card-area .cards .row-1 {
+    margin-left: 0%;
+}
+
+#tab-2:checked~.card-area .cards .row-1 {
+    margin-left: -33.4%;
+}
+
+#tab-3:checked~.card-area .cards .row-1 {
+    margin-left: -66.8%;
+}
+
+.row .price-details {
+    margin: 20px 0;
+    text-align: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.price-details .price {
+    font-size: 65px;
+    font-weight: 600;
+    position: relative;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.price-details .price::before,
+.price-details .price::after {
+    position: absolute;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+
+.price-details .price::before {
+    content: "$";
+    left: -13px;
+    top: 17px;
+    font-size: 20px;
+}
+
+.price-details .price::after {
+    content: "/mon";
+    right: -33px;
+    bottom: 17px;
+    font-size: 13px;
+}
+
+.price-details p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.row .features li {
+    display: flex;
+    font-size: 15px;
+    list-style: none;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.features li i {
+    background: linear-gradient(#a2f373 0%, #175c26 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.features li span {
+    margin-left: 10px;
+}
+
+.wrapper button,
+.btn-outline,
+.btn-primary {
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    background: linear-gradient(145deg, #a2f373 0%, #175c26 100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+}
+
+.wrapper button:hover {
+    transform: scale(0.98);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #175c26;
+    color: #175c26;
+}
+
+.btn-outline:hover {
+    background: #175c26;
+    color: #fff;
+}
+
+/* Dark Mode */
+.dark-class .wrapper {
+    background: #2d2d2d;
+    color: #fff;
+}
+
+.dark-class .wrapper header {
+    border-color: #444;
+}
+
+.dark-class .price-details,
+.dark-class .features li,
+.dark-class .price-details p {
+    color: #fff;
+}
+
+.dark-class .row .price-details {
+    border-bottom-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .wrapper {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .price-details .price {
+        font-size: 50px;
+    }
+
+    .wrapper button {
+        height: 45px;
+        font-size: 16px;
+    }
+}
+
+/* Content Sections */
+.content-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dual-column {
+    display: grid;
+    flex-direction: column;
+    gap: 40px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .dual-column {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+}
+
+/* Pricing Cards */
+.pricing-section {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .tab-labels {
+    display: flex;
+    justify-content: space-between;
+    background: #e0e0e0;
+    border-radius: 40px;
+    padding: 5px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .tab-labels label {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;
+  }
+  
+  input#tab-1:checked ~ .tab-labels .tab-1,
+  input#tab-2:checked ~ .tab-labels .tab-2,
+  input#tab-3:checked ~ .tab-labels .tab-3 {
+    background: linear-gradient(to right, #a8e063, #56ab2f);
+    color: white;
+    font-weight: 600;
+  }
+  
+  .tab-content > div {
+    display: none;
+  }
+  
+  input#tab-1:checked ~ .tab-content > :nth-child(1),
+  input#tab-2:checked ~ .tab-content > :nth-child(2),
+  input#tab-3:checked ~ .tab-content > :nth-child(3) {
+    display: block;
+  }
+  
+  /* Card styling */
+  .pricing-card, .content-box {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
+  .pricing-card h3,
+  .content-box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .pricing-card p,
+  .content-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Pricing style */
+  .content-box p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  
+  .btn-outline, .btn-primary {
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease;
+  }
+  
+  .btn-outline {
+    background: white;
+    border: 2px solid #56ab2f;
+    color: #56ab2f;
+  }
+  
+  .btn-outline:hover {
+    background: #56ab2f;
+    color: white;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(to right, #a8e063, #56ab2f);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(to right, #56ab2f, #a8e063);
+  }
+  

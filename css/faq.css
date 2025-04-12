@@ -1,0 +1,34 @@
+.faq_container {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+  }
+  
+  .faq_container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #008aff;
+  }
+  
+  .accordion-button {
+    font-weight: 600;
+    background-color: #fff;
+    color: #333;
+    border-radius: 0 !important;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #008aff;
+    color: #fff;
+  }
+  
+  .accordion-body {
+    background-color: #fdfdfd;
+    color: #444;
+  }
+  
+  .accordion-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  

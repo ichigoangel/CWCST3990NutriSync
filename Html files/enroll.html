@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Choose the perfect Wellness Wave plan for your health journey - from free basic to premium options"
+    />
+    <title>Plans & About | NutriSync</title>
+
+    <!-- Linking Stylesheets -->
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/navibar.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../images/nutrisync_logo.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+      <nav class="newNav">
+        <a href="./index.html" class="nav__logo">NutriSync<span>.</span></a>
+        <ul class="navLinks">
+          <li class="link"><a href="/index.html">Home</a></li>
+          <!-- <li class="link"><a href="about.html">About</a></li> -->
+          <li class="link"><a href="/Html files/services.html">Service</a></li>
+          <li class="link"><a href="/Html files/enroll.html">Enroll Now</a></li>
+          <li class="link"><a href="faq.html">FAQ</a></li>
+          <li class="link"><a href="/index.html#contact">Contact</a></li>
+          <li>
+            <label class="toggleButton" aria-label="Toggle dark mode">
+              <input type="checkbox" id="toggle" />
+              <div class="roundButton circle"></div>
+            </label>
+          </li>
+        </ul>
+        <div class="ham" aria-expanded="false">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </nav>
+    </div>
+
+    <div id="scrollPath"></div>
+    <div id="progressbar"></div>
+
+    <!-- Hero Section -->
+    <section class="hero about-hero" aria-labelledby="pricing-heading">
+      <div class="hero-content">
+        <h1 id="main-heading">Your Health Journey Starts Here</h1>
+        <p>
+          Discover personalized nutrition and fitness plans tailored just for
+          you
+        </p>
+      </div>
+    </section>
+
+    <!-- Balanced About & Pricing Sections -->
+    <div class="content-section">
+      <div class="dual-column">
+        <!-- About Column -->
+        <section id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading">About NutriSync</h2>
+          <p>
+            NutriSync is revolutionizing health and wellness through AI-powered
+            nutrition planning and fitness tracking. Our mission is to make
+            healthy living accessible, sustainable, and enjoyable for everyone.
+          </p>
+
+          <div class="mission-box">
+            <h3>Our Approach</h3>
+            <p>
+              We combine cutting-edge technology with evidence-based nutrition
+              science to create solutions that adapt to your unique needs and
+              lifestyle.
+            </p>
+          </div>
+
+          <div class="mission-box">
+            <h3>Core Values</h3>
+            <ul>
+              <li>Personalized health solutions</li>
+              <li>Science-backed recommendations</li>
+              <li>User-friendly experience</li>
+              <li>Continuous improvement</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Pricing Column -->
+        <section class="pricing-section">
+          <h2 id="pricing-heading">Simple Pricing</h2>
+          <div class="tabs">
+            <input type="radio" name="tab" id="tab-1" checked hidden />
+            <input type="radio" name="tab" id="tab-2" hidden />
+            <input type="radio" name="tab" id="tab-3" hidden />
+
+            <div class="tab-labels">
+              <label for="tab-1" class="tab-1">Basic</label>
+              <label for="tab-2" class="tab-2">Premium</label>
+              <label for="tab-3" class="tab-3">Ultimate</label>
+              <div class="slider"></div>
+            </div>
+
+            <div class="tab-content">
+              <div class="pricing-card">
+                <h3>Basic Plan</h3>
+                <p>
+                  ✔ Basic meal plans<br />✔ Fitness guidance<br />✔ Free forever
+                </p>
+                <button class="btn-outline">Get Started</button>
+              </div>
+              <div class="content-box tab-2-content">
+                <h3>Premium Plan</h3>
+                <p>✔ Custom plans<br />✔ 1-on-1 Coaching<br />✔ $14.99/month</p>
+                <button class="btn-primary">Choose Plan</button>
+              </div>
+              <div class="pricing-card">
+                <h3>Ultimate Plan</h3>
+                <p>
+                  ✔ Everything Premium<br />✔ Personalized AI Trainer<br />✔
+                  $24.99/month
+                </p>
+                <button class="btn-primary">Upgrade</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Full Feature Comparison -->
+    <section
+      id="comparison"
+      class="content-section feature-section"
+      aria-labelledby="features-heading"
+    >
+      <h2 id="features-heading">Plan Comparison</h2>
+      <div class="feature-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Basic</th>
+              <th>Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Personalized Meal Plans</td>
+              <td><i class="fas fa-check"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+              <td>Custom Workout Routines</td>
+              <td>Basic</td>
+              <td>Advanced</td>
+            </tr>
+            <tr>
+              <td>Nutrition Coaching</td>
+              <td><i class="fas fa-times"></i></td>
+              <td><i class="fas fa-check"></i></td>
+            </tr>
+            <tr>
+              <td>Progress Analytics</td>
+              <td>Basic</td>
+              <td>Advanced</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="foot-up">
+        <div class="footer-part" aria-labelledby="footer-brand">
+          <h2 id="footer-brand">NutriSync<span>.</span></h2>
+          <div class="slogan">
+            <p>
+              Your Health, Your Strength.<br />Smart Nutrition, Smart Living.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-part" aria-labelledby="footer-links">
+          <h2 id="footer-links">Quick Links</h2>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="#">Plans</a>
+            <a href="../html_files/feedback.html">Rate Us</a>
+            <a href="../html_files/faq.html">FAQ</a>
+          </div>
+        </div>
+
+        <div class="footer-part" aria-labelledby="footer-social">
+          <h2 id="footer-social">Connect With Us</h2>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright">
+        Copyright © 2024 NutriSync. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="/javascript/style.js"></script>
+  </body>
+</html>

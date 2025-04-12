@@ -100,3 +100,29 @@
     //   }
     // }
   });
+
+  // Consider replacing plain JS with Vue components
+const app = Vue.createApp({
+  data() {
+    return {
+      showCookieConsent: !localStorage.getItem('cookiesAccepted'),
+      activeForm: null,
+      scrollPosition: 0
+    }
+  },
+  methods: {
+    acceptCookies() {
+      localStorage.setItem('cookiesAccepted', 'true')
+      this.showCookieConsent = false
+    },
+    showForm(type) {
+      this.activeForm = type
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', () => {
+      this.scrollPosition = window.scrollY
+    })
+  }
+})
+app.mount('#app')

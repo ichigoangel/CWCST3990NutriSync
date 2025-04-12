@@ -36,11 +36,20 @@
   <body>
     <!-- Navigation Bar (Copied from index.html) -->
     <div class="nav-container">
-      <nav class="newNav">
+      <nav class="newNav" aria-label="Main navigation">
+        <!-- <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span class="sr-only">Menu</span>
+          <i class="fas fa-bars"></i> -->
+        </button>
         <a href="index.html" class="nav__logo">NutriSync<span>.</span></a>
-        <ul class="navLinks">
+        <ul id="navLinks" class="navLinks">
           <li><a href="/index.html">Home</a></li>
           <li><a href="/Html files/services.html">Services</a></li>
+          <li><a href="/Html files/enroll.html">Enroll now</a></li>
           <li><a href="/Html files/meal.html">Meal Plans</a></li>
           <li><a href="/Html files/recipe.html">Recipes</a></li>
           <li><a href="/Html files/yoga.html">Yoga Help</a></li>

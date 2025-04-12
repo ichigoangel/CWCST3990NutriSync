@@ -128,49 +128,63 @@
     <section id="userInfo" style="display: none">
       <h3>Welcome, <span id="username">Guest</span>!</h3>
       <p>You are logged in as <span id="userRole">Guest</span></p>
-      <img
+      <!-- <img
         src="images/default-user.png"
         alt="User Logo"
         id="userLogo"
         width="100"
-      />
+      /> -->
     </section>
 
     <!-- Forms Container -->
-<div id="formContainer" class="container my-5" style="display: none;">
-    <!-- Login Form -->
-    <section id="loginSection">
-      <h2>Login</h2>
-      <form id="loginForm">
-        <div class="mb-3">
-          <label for="loginEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="loginEmail" required />
-        </div>
-        <div class="mb-3">
-          <label for="loginPassword" class="form-label">Password</label>
-          <input type="password" class="form-control" id="loginPassword" required />
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
-    </section>
-  
-    <!-- Signup Form -->
-    <section id="signupSection">
-      <h2>Sign Up</h2>
-      <form id="signupForm">
-        <div class="mb-3">
-          <label for="signupEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="signupEmail" required />
-        </div>
-        <div class="mb-3">
-          <label for="signupPassword" class="form-label">Password</label>
-          <input type="password" class="form-control" id="signupPassword" required />
-        </div>
-        <button type="submit" class="btn btn-warning">Sign Up</button>
-      </form>
-    </section>
-  </div>
-  
+    <div id="formContainer" class="container my-5" style="display: none">
+      <!-- Login Form -->
+      <section id="loginSection">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="loginEmail" required />
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="loginPassword"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </section>
+
+      <!-- Signup Form -->
+      <section id="signupSection">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+          <div class="mb-3">
+            <label for="signupEmail" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="signupEmail"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="signupPassword" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="signupPassword"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-warning">Sign Up</button>
+        </form>
+      </section>
+    </div>
 
     <!-- About Section -->
     <section class="two" id="about">
