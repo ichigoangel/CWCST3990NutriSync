@@ -1,16 +1,16 @@
 // Theme Toggle Functionality
-document.getElementById('themeToggle').addEventListener('click', function() {
-    document.body.classList.toggle('dark-mode');
+// document.getElementById('themeToggle').addEventListener('click', function() {
+//     document.body.classList.toggle('dark-mode');
     
-    const icon = this.querySelector('i');
-    if (document.body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-    }
-});
+//     const icon = this.querySelector('i');
+//     if (document.body.classList.contains('dark-mode')) {
+//         icon.classList.remove('fa-moon');
+//         icon.classList.add('fa-sun');
+//     } else {
+//         icon.classList.remove('fa-sun');
+//         icon.classList.add('fa-moon');
+//     }
+// });
 
 // Initialize date variables
 let currentDate = new Date();
@@ -37,24 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function setupEventListeners() {
-    // View toggle buttons
-    weeklyViewBtn.addEventListener('click', function() {
-        currentView = 'weekly';
-        weeklyViewBtn.classList.add('btn-success');
-        weeklyViewBtn.classList.remove('btn-outline-success');
-        monthlyViewBtn.classList.add('btn-outline-success');
-        monthlyViewBtn.classList.remove('btn-success');
-        updateView();
-    });
-    
-    monthlyViewBtn.addEventListener('click', function() {
-        currentView = 'monthly';
-        monthlyViewBtn.classList.add('btn-success');
-        monthlyViewBtn.classList.remove('btn-outline-success');
-        weeklyViewBtn.classList.add('btn-outline-success');
-        weeklyViewBtn.classList.remove('btn-success');
-        updateView();
-    });
+        // View toggle buttons
+        weeklyViewBtn.addEventListener('click', function() {
+            currentView = 'weekly';
+            updateView();
+        });
+        
+        monthlyViewBtn.addEventListener('click', function() {
+            currentView = 'monthly';
+            updateView();
+        });
     
     // Week navigation
     document.getElementById('prevWeek').addEventListener('click', function() {
@@ -285,13 +277,41 @@ function showReplaceMealOptions() {
     
     if (!currentMeal) return;
     
-    document.getElementById('replacementOptions').innerHTML = `
-        <div class="col-12 text-center py-4">
-            <div class="spinner-border text-success" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-    `;
+    const replacementOptionsContainer = document.getElementById('replacementOptions');
+    replacementOptionsContainer.innerHTML = '';
+
+    // Filter meals of the same type
+    const sameTypeMeals = recipeDatabase.filter(meal =>
+        meal.type === currentMeal.type && meal.id !== currentMeal.id
+    );
+
+    if (sameTypeMeals.length === 0) {
+        replacementOptionsContainer.innerHTML = '<p class="text-muted">No replacement options available.</p>';
+        return;
+    }
+
+    // Render replacement options
+    sameTypeMeals.forEach(meal => {
+        const mealCard = document.createElement('div');
+        mealCard.className = 'replacement-meal-card';
+        mealCard.innerHTML = `
+            <img src="${meal.image}" alt="${meal.title}" class="img-fluid mb-2">
+            <h6>${meal.title}</h6>
+            <p>${meal.calories} kcal • ${meal.time} min</p>
+            <button class="btn btn-outline-primary btn-sm replaceBtn" data-new-meal-id="${meal.id}">Replace</button>
+        `;
+        replacementOptionsContainer.appendChild(mealCard);
+    });
+
+    // Handle replacement selection
+    replacementOptionsContainer.querySelectorAll('.replaceBtn').forEach(button => {
+        button.addEventListener('click', function () {
+            const newMealId = this.dataset.newMealId;
+            replaceMeal(currentMealId, newMealId);
+            replaceMealModal.hide();
+            updateView(); // Refresh the current view to reflect the change
+        });
+    });
     
     replaceMealModal.show();
     
