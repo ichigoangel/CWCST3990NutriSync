@@ -1,0 +1,346 @@
+/* Yoga Page Styles */
+.yoga-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/yoga-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 8rem 2rem;
+    margin-bottom: 3rem;
+}
+
+.yoga-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.yoga-hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Benefits Section */
+.yoga-benefits {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.yoga-benefits h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: #f8f393;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+    margin-bottom: 1rem;
+}
+
+/* Yoga Poses Section */
+.yoga-poses {
+    padding: 4rem 0;
+}
+
+.yoga-poses h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: #f8f393;
+    border-color: #f8f393;
+    color: #333;
+}
+
+.poses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.pose-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pose-card:hover {
+    transform: translateY(-5px);
+}
+
+.pose-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pose-info {
+    padding: 1.5rem;
+}
+
+.pose-info h3 {
+    margin-bottom: 0.5rem;
+}
+
+.pose-info .difficulty {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.pose-info .difficulty.beginner {
+    background: #d4edda;
+    color: #155724;
+}
+
+.pose-info .difficulty.intermediate {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.pose-info .difficulty.advanced {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.pose-info p {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+/* Recommended Routines */
+.recommended-routines {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.recommended-routines h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.routine-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.routine-tab {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.routine-tab.active {
+    background: #f8f393;
+    border-color: #f8f393;
+    color: #333;
+}
+
+.routine-content {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.routine-content.active {
+    display: block;
+}
+
+.routine-content h3 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.routine-content ol {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+.routine-content li {
+    margin-bottom: 0.5rem;
+}
+
+.start-routine {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Yoga Timer */
+.yoga-timer {
+    padding: 4rem 0;
+}
+
+.yoga-timer h2 {
+    text -align: center;
+    margin-bottom: 2rem;
+}
+
+.timer-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-family: monospace;
+    margin-bottom: 1.5rem;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.timer-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timer-settings input {
+    width: 60px;
+    text-align: center;
+    padding: 0.25rem;
+}
+
+/* AI Assistant */
+.ai-assistant {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.ai-assistant h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.assistant-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.assistant-chat {
+    height: 300px;
+    padding: 1.5rem;
+    overflow-y: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.assistant-message {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.assistant-input {
+    display: flex;
+    padding: 1rem;
+}
+
+.assistant-input input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.assistant-input button {
+    border-radius: 0 5px 5px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .yoga-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .yoga-hero p {
+        font-size: 1.2rem;
+    }
+    
+    .routine-tabs, .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .poses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+#routine-timer {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: auto;
+}
