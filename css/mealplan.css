@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f8f9fa;
+}
+
+.dark-mode .card,
+.dark-mode .modal-content,
+.dark-mode .table {
+    background-color: #2d2d2d;
+    color: #f8f9fa;
+}
+
+.dark-mode .table {
+    border-color: #444 !important;
+}
+
+.dark-mode .table th,
+.dark-mode .table td {
+    border-color: #444 !important;
+}
+
+.dark-mode .text-muted {
+    color: #b0b0b0 !important;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Meal Plan Styles */
+.day-cell {
+    height: 180px;
+    vertical-align: top;
+    padding: 8px;
+    position: relative;
+}
+
+.meal-card {
+    background-color: rgba(40, 167, 69, 0.1);
+    border-left: 4px solid #28a745;
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.meal-card:hover {
+    background-color: rgba(40, 167, 69, 0.2);
+}
+
+.meal-time {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #28a745;
+}
+
+.meal-title {
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+.meal-calories {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+.dark-mode .meal-calories {
+    color: #b0b0b0;
+}
+
+/* Calendar Styles */
+.calendar-day {
+    height: 100px;
+    padding: 5px;
+    position: relative;
+}
+
+.calendar-day:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .calendar-day:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.calendar-date {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.calendar-meal {
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 2px;
+    padding: 1px 3px;
+    background-color: rgba(40, 167, 69, 0.1);
+    border-radius: 3px;
+}
+
+.other-month {
+    color: #adb5bd;
+    background-color: #f8f9fa;
+}
+
+.dark-mode .other-month {
+    color: #555;
+    background-color: #2d2d2d;
+}
+
+/* Modal Styles */
+.meal-detail-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.meal-replacement {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.meal-replacement:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.spinner-border {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .day-cell {
+        height: auto;
+        min-height: 100px;
+    }
+    
+    .calendar-day {
+        height: 60px;
+    }
+    
+    .calendar-meal {
+        display: none;
+    }
+}

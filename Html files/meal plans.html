@@ -1,21 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NutriSync - Home</title>
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NutriSync - Home</title>
+    <!-- Linking Stylesheets -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/navibar.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/mode.css" />
+    <link rel="stylesheet" href="/css/mealplan.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="images/nutrisync_logo.png"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+      <nav class="newNav">
+        <a href="./index.html" class="nav__logo">NutriSync<span>.</span></a>
+        <div class="ham" onclick="toggleMenu()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <ul class="navLinks" id="navLinks">
+          <li><a href="/index.html#about">About</a></li>
+          <li><a href="/Html files/services.html">Services</a></li>
+          <li><a href="/Html files/yoga.html">Yoga & Wellness</a></li>
+          <li><a href="/index.html#testimonials">Testimonials</a></li>
+          <li><a href="/index.html#contact">Contact</a></li>
+          <li>
+            <button onclick="showForm('login')" class="btn btn-outline-light">
+              Login
+            </button>
+          </li>
+          <li>
+            <button onclick="showForm('signup')" class="btn btn-warning">
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
-<!-- Linking Stylesheets -->
-<link rel="stylesheet" href="./css/home.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous">
+    <!-- Main Content -->
+    <div class="container my-5">
+      <!-- Plan Controls -->
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-success" id="weeklyViewBtn">
+              <i class="fas fa-calendar-week me-2"></i>Weekly View
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              id="monthlyViewBtn"
+            >
+              <i class="fas fa-calendar-alt me-2"></i>Monthly View
+            </button>
+          </div>
+          <button class="btn btn-outline-success ms-2" id="generatePlanBtn">
+            <i class="fas fa-magic me-2"></i>Generate Plan
+          </button>
+          <button class="btn btn-outline-danger ms-2" id="clearPlanBtn">
+            <i class="fas fa-trash me-2"></i>Clear Plan
+          </button>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="input-group">
+            <span class="input-group-text"
+              ><i class="fas fa-calendar-day"></i
+            ></span>
+            <input type="date" class="form-control" id="planDate" />
+            <button class="btn btn-success" id="goToDateBtn">Go</button>
+          </div>
+        </div>
+      </div>
 
-<link rel="stylesheet" href="./css/navibar.css">
-<link rel="stylesheet" href="./css/footer.css">
-<link rel="shortcut icon" type="image/png" href="images/nutrisync_logo.png" />
-<link rel="stylesheet" href="./css/mode.css">
-</head>
-<body>
-</body>
+      <!-- Preferences Panel -->
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">
+            <i class="fas fa-sliders-h me-2"></i>Meal Preferences
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <label for="dietaryPref" class="form-label"
+                >Dietary Preference</label
+              >
+              <select class="form-select" id="dietaryPref">
+                <option value="any">Any</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="keto">Keto</option>
+                <option value="low-carb">Low-Carb</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="calorieTarget" class="form-label"
+                >Calorie Target</label
+              >
+              <select class="form-select" id="calorieTarget">
+                <option value="any">Any</option>
+                <option value="1200-1500">1200-1500 kcal</option>
+                <option value="1500-1800">1500-1800 kcal</option>
+                <option value="1800-2200">1800-2200 kcal</option>
+                <option value="2200-2500">2200-2500 kcal</option>
+                <option value="2500-3000">2500-3000 kcal</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="cuisinePref" class="form-label"
+                >Preferred Cuisine</label
+              >
+              <select class="form-select" id="cuisinePref">
+                <option value="any">Any</option>
+                <option value="italian">Italian</option>
+                <option value="mexican">Mexican</option>
+                <option value="asian">Asian</option>
+                <option value="indian">Indian</option>
+                <option value="mediterranean">Mediterranean</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label for="mealsPerDay" class="form-label">Meals Per Day</label>
+              <select class="form-select" id="mealsPerDay">
+                <option value="3">3 (Standard)</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6 (Snacks included)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weekly Plan View -->
+      <div id="weeklyPlanView">
+        <div class="row mb-3">
+          <div class="col-12 d-flex justify-content-between">
+            <button class="btn btn-outline-secondary" id="prevWeekBtn">
+              <i class="fas fa-chevron-left me-2"></i>Previous Week
+            </button>
+            <h4 class="text-center my-0" id="weekRangeDisplay">Loading...</h4>
+            <button class="btn btn-outline-secondary" id="nextWeekBtn">
+              Next Week<i class="fas fa-chevron-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <thead class="table-success">
+              <tr>
+                <th style="width: 14%">Sunday</th>
+                <th style="width: 14%">Monday</th>
+                <th style="width: 14%">Tuesday</th>
+                <th style="width: 14%">Wednesday</th>
+                <th style="width: 14%">Thursday</th>
+                <th style="width: 14%">Friday</th>
+                <th style="width: 14%">Saturday</th>
+              </tr>
+            </thead>
+            <tbody id="weeklyPlanDays">
+              <!-- Will be filled by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Monthly Plan View (Hidden by default) -->
+      <div id="monthlyPlanView" style="display: none">
+        <div class="row mb-3">
+          <div class="col-12 d-flex justify-content-between">
+            <button class="btn btn-outline-secondary" id="prevMonthBtn">
+              <i class="fas fa-chevron-left me-2"></i>Previous Month
+            </button>
+            <h4 class="text-center my-0" id="monthYearDisplay">Loading...</h4>
+            <button class="btn btn-outline-secondary" id="nextMonthBtn">
+              Next Month<i class="fas fa-chevron-right ms-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-bordered" id="monthCalendar">
+            <thead class="table-success">
+              <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+            </thead>
+            <tbody id="monthDays">
+              <!-- Calendar days will be generated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Meal Details Modal -->
+      <div
+        class="modal fade"
+        id="mealDetailsModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+              <h5 class="modal-title" id="mealModalTitle">Meal Details</h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body" id="mealModalContent">
+              <!-- Content will be loaded by JavaScript -->
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-success" id="replaceMealBtn">
+                Replace Meal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Replace Meal Modal -->
+      <div
+        class="modal fade"
+        id="replaceMealModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+              <h5 class="modal-title">Replace This Meal</h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="row" id="replacementOptions">
+                <!-- Replacement options will be loaded here -->
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Configuration Modal -->
+      <div
+        class="modal fade"
+        id="aiConfigModal"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+              <h5 class="modal-title">AI Meal Plan Configuration</h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="aiConfigForm">
+                <div class="mb-3">
+                  <label class="form-label">Dietary Preferences</label>
+                  <div class="d-flex flex-wrap">
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="vegetarianCheck"
+                        name="dietary"
+                        value="vegetarian"
+                      />
+                      <label class="form-check-label" for="vegetarianCheck"
+                        >Vegetarian</label
+                      >
+                    </div>
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="veganCheck"
+                        name="dietary"
+                        value="vegan"
+                      />
+                      <label class="form-check-label" for="veganCheck"
+                        >Vegan</label
+                      >
+                    </div>
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="glutenFreeCheck"
+                        name="dietary"
+                        value="gluten-free"
+                      />
+                      <label class="form-check-label" for="glutenFreeCheck"
+                        >Gluten-Free</label
+                      >
+                    </div>
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="ketoCheck"
+                        name="dietary"
+                        value="keto"
+                      />
+                      <label class="form-check-label" for="ketoCheck"
+                        >Keto</label
+                      >
+                    </div>
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="lowCarbCheck"
+                        name="dietary"
+                        value="low-carb"
+                      />
+                      <label class="form-check-label" for="lowCarbCheck"
+                        >Low-Carb</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Cuisine Preferences</label>
+                  <div class="d-flex flex-wrap">
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="italianCheck"
+                        name="cuisine"
+                        value="italian"
+                        checked
+                      />
+                      <label class="form-check-label" for="italianCheck"
+                        >Italian</label
+                      >
+                    </div>
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="mexicanCheck"
+                        name="cuisine"
+                        value="mexican"
+                        checked
+                      />
+                      <label class="form-check-label" for="mexicanCheck"
+                        >Mexican</label
+                      >
+                    </div>
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="asianCheck"
+                        name="cuisine"
+                        value="asian"
+                        checked
+                      />
+                      <label class="form-check-label" for="asianCheck"
+                        >Asian</label
+                      >
+                    </div>
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="indianCheck"
+                        name="cuisine"
+                        value="indian"
+                        checked
+                      />
+                      <label class="form-check-label" for="indianCheck"
+                        >Indian</label
+                      >
+                    </div>
+                    <div class="form-check me-3 mb-2">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="mediterraneanCheck"
+                        name="cuisine"
+                        value="mediterranean"
+                        checked
+                      />
+                      <label class="form-check-label" for="mediterraneanCheck"
+                        >Mediterranean</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <label for="aiCalorieTarget" class="form-label"
+                      >Daily Calorie Target</label
+                    >
+                    <select
+                      class="form-select"
+                      id="aiCalorieTarget"
+                      name="calories"
+                    >
+                      <option value="1500">1500 kcal</option>
+                      <option value="1800">1800 kcal</option>
+                      <option value="2000" selected>2000 kcal</option>
+                      <option value="2200">2200 kcal</option>
+                      <option value="2500">2500 kcal</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="cookingTime" class="form-label"
+                      >Max Cooking Time per Meal</label
+                    >
+                    <select
+                      class="form-select"
+                      id="cookingTime"
+                      name="cookingTime"
+                    >
+                      <option value="30">30 minutes</option>
+                      <option value="45" selected>45 minutes</option>
+                      <option value="60">60 minutes</option>
+                      <option value="90">90 minutes</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="avoidIngredients" class="form-label"
+                    >Ingredients to Avoid</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="avoidIngredients"
+                    name="avoidIngredients"
+                    placeholder="e.g., mushrooms, shellfish, peanuts"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                class="btn btn-success"
+                id="generateAiPlanBtn"
+              >
+                Generate Plan
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <h5>NutriSync</h5>
+            <p>
+              Your personalized nutrition and meal planning companion powered by
+              AI.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-white me-2"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="#" class="text-white">Recipes</a></li>
+              <li><a href="#" class="text-white">Meal Plans</a></li>
+              <li><a href="#" class="text-white">Nutrition</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h5>Contact</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-envelope me-2"></i> info@nutrisync.com</li>
+              <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-3">
+            <h5>Newsletter</h5>
+            <form>
+              <div class="mb-2">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your email"
+                />
+              </div>
+              <button type="submit" class="btn btn-success">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <hr class="my-3" />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2023 NutriSync. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/javascript/mealAI.js"></script>
+    <script src="/javascript/mealplanner.js"></script>
+  </body>
 </html>
